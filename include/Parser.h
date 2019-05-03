@@ -5,7 +5,7 @@ namespace HackVMTranslator {
     class Parser {
     public:
         /**
-         * \brief Contains the different VM-language command-types.
+         * \brief Contains the different Hack VM-language command-types.
          */
         enum class CommandType { ARITHMETIC, PUSH, POP, LABEL, GOTO, IF, FUNCTION, RETURN, CALL };
 

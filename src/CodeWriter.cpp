@@ -177,14 +177,14 @@ namespace HackVMTranslator {
             "D;JNE\n";
     }
 
-    void CodeWriter::writeFunction(const string& name, int numVars) {
+    void CodeWriter::writeFunction(const string& name, int numLocals) {
         currentFunctionName_ = name;
 
         outputStream_ << "(" << currentFunctionName_  << ")\n"
             "@SP\n"
             "A=M\n";
 
-        for(auto i = 0; i != numVars; ++i) {
+        for(auto i = 0; i != numLocals; ++i) {
             outputStream_ << "M=0\n"
                 "A=A+1\n";
         }
@@ -194,7 +194,7 @@ namespace HackVMTranslator {
             "M=D\n";
     }
 
-    void CodeWriter::writeCall(const string& name, int numVars) {
+    void CodeWriter::writeCall(const string& name, int numArgs) {
         outputStream_ << "@" << currentFunctionName_ << "$ret." << currentReturnSymbolId_ << "\n"
             "D=A\n"
             << WRITE_D_TO_STACK_AND_UPDATE_SP_CODE <<
@@ -210,7 +210,7 @@ namespace HackVMTranslator {
             "@THAT\n"
             "D=M\n"
             << WRITE_D_TO_STACK_AND_UPDATE_SP_CODE <<
-            "@" << numVars + 5 << "\n"
+            "@" << numArgs + 5 << "\n"
             "D=A\n"
             "@SP\n"
             "D=M-D\n"

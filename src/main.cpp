@@ -2,7 +2,7 @@
 #include <iostream>
 
 using std::cout;
-using std::flush;
+using std::endl;
 
 int main(int argc, char** argv)
 {
@@ -10,6 +10,6 @@ int main(int argc, char** argv)
         return HackVMTranslator::translate(argv[1]);
     }
 
-    cout << "Wrong number of arguments. Usage: HackVMTranslator <<filename>.vm OR <directoryName>>" << flush;
+    cout << "Wrong number of arguments. Usage: HackVMTranslator <<filename>.vm OR <directoryName>>" << endl;
     return -1;
 }

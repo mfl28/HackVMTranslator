@@ -13,6 +13,7 @@ using std::ofstream;
 using std::cout;
 using std::runtime_error;
 using std::stringstream;
+using std::endl;
 using std::istream;
 
 namespace fs = std::filesystem;
@@ -61,7 +62,7 @@ namespace HackVMTranslator {
         const fs::path inputPath(inputPathName);
 
         if(!is_directory(inputPath) && inputPath.extension() != ".vm") {
-            cout << "Invalid argument: Must be either a path to a *.vm file or a path to a directory (containing *.vm files).";
+            cout << "Invalid argument: Must be either a path to a *.vm file or a path to a directory (containing *.vm files)." << endl;
             return -1;
         }
 
@@ -82,12 +83,12 @@ namespace HackVMTranslator {
                             translateFile(codeWriter, file);
                         }
                         catch(const runtime_error& e) {
-                            cout << "VMTranslator error in file " << item.path().filename() << ": " << e.what();
+                            cout << "VMTranslator error in file " << item.path().filename() << ": " << e.what() << endl;
                             return -1;
                         }
                     }
                     else {
-                        cout << "VMTranslator error: Could not open file " << item.path().filename() << ".";
+                        cout << "VMTranslator error: Could not open file " << item.path().filename() << '.' << endl;
                         return -1;
                     }
 
@@ -100,12 +101,12 @@ namespace HackVMTranslator {
             }
 
             if(validFiles == 0) {
-                cout << "VMTranslator error: The directory " << inputPath << " does not contain any *.vm files.";
+                cout << "VMTranslator error: The directory " << inputPath << " does not contain any *.vm files." << endl;
                 return -1;
             }
 
             if(!sysFilePresent) {
-                cout << "VMTranslator error: Sys.vm was not found in directory " << inputPath << ".";
+                cout << "VMTranslator error: Sys.vm was not found in directory " << inputPath << '.' << endl;
                 return -1;
             }
         }
@@ -116,12 +117,12 @@ namespace HackVMTranslator {
                 translateFile(codeWriter, file);
             }
             catch(const runtime_error& e) {
-                cout << "VMTranslator error: " << e.what();
+                cout << "VMTranslator error: " << e.what() << endl;
                 return -1;
             }
         }
         else {
-            cout << "VMTranslator error: Could not open file " << inputPath.filename() << ".";
+            cout << "VMTranslator error: Could not open file " << inputPath.filename() << '.' << endl;
             return -1;
         }
 
@@ -132,7 +133,7 @@ namespace HackVMTranslator {
             outputFile << outputBuffer.str();
         }
         else {
-            cout << "VMTranslator error: Could not create output file " << outputPath << ".";
+            cout << "VMTranslator error: Could not create output file " << outputPath << '.' << endl;
             return -1;
         }
 

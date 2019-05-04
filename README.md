@@ -17,7 +17,7 @@ cmake --build .
 After you built the program, do the following from within the `build`-directory:
 #### Linux
 ```bash
-./HackVMTranslator path/to/filename.vm   # Or "./HackVMTranslator path/to/directory"
+./HackVMTranslator path/to/filename.vm    # Or "./HackVMTranslator path/to/directory"
 ```
 #### Windows
 ```bash

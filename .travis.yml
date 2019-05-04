@@ -15,6 +15,6 @@ script:
   - export CXX=g++-8
   - cmake --version
   - cmake -D BUILD_TESTS=ON -S .
-  - cmake --build . --config Release
-  - ctest -C Release -V
+  - cmake --build .
+  - ctest -V
 

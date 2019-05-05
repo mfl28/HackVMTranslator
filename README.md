@@ -22,7 +22,7 @@ After you built the program, do the following from within the `build`-directory:
 #### Windows
 ```bash
 cd Debug    # Or "cd Release" if you built using Release-configuration.
-.\HackAssembler.exe path\to\filename.vm    # Or ".\HackVMTranslator path\to\directory"
+.\HackVMTranslator.exe path\to\filename.vm    # Or ".\HackVMTranslator path\to\directory"
 ```
 ## Running the tests
 If you built the program including the unit-tests (i.e. using `-D BUILD_TESTS=ON`), then these can be run from within the `build`-directory by doing the following:

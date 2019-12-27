@@ -1,4 +1,4 @@
-# HackVMTranslator [![Build Status](https://travis-ci.org/mfl28/HackVMTranslator.svg?branch=master)](https://travis-ci.org/mfl28/HackVMTranslator)
+# HackVMTranslator [![Build Status](https://travis-ci.org/mfl28/HackVMTranslator.svg?branch=master)](https://travis-ci.org/mfl28/HackVMTranslator) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/mfl28/HackVMTranslator.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/mfl28/HackVMTranslator/context:cpp)
 This is a C++-implementation of a translator for the Hack-platform's virtual-machine language as defined in [project 7](https://www.nand2tetris.org/project07) and [project 8](https://www.nand2tetris.org/project08) of the nand2tetris-course.
 The program takes as argument either a single `.vm`-file or a directory containing such files, translates them into Hack assembly-language code and writes this code into a single `.asm`-file.
 

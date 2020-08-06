@@ -10,7 +10,7 @@ git clone https://github.com/mfl28/HackVMTranslator.git
 cd HackVMTranslator
 mkdir build
 cd build
-cmake ..    # Use "cmake -D BUILD_TESTS=ON .." if you want to also build the unit-tests.
+cmake ..    # Use "cmake -D BUILD_TESTING=ON .." if you want to also build the unit-tests.
 cmake --build .   
 ```
 ## Running the program
@@ -25,7 +25,7 @@ cd Debug    # Or "cd Release" if you built using Release-configuration.
 .\HackVMTranslator.exe path\to\filename.vm    # Or ".\HackVMTranslator path\to\directory"
 ```
 ## Running the tests
-If you built the program including the unit-tests (i.e. using `-D BUILD_TESTS=ON`), then these can be run from within the `build`-directory by doing the following:
+If you built the program including the unit-tests (i.e. using `-D BUILD_TESTING=ON`), then these can be run from within the `build`-directory by doing the following:
 #### Linux
 ```bash
 ctest -V

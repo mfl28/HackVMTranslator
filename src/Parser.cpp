@@ -1,6 +1,9 @@
 #include "Parser.h"
 #include <algorithm>
 #include <vector>
+#include <string>
+#include <istream>
+#include <regex>
 
 using std::istream;
 using std::string;
